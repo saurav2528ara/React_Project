@@ -2,7 +2,8 @@ import React, {lazy,Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
+import { createRoutes, RouterProvider, Outlet} from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import error from "./components/Error";
@@ -48,7 +49,7 @@ useEffect(() => {
   );
 };
 
-const appRouter = createBrowserRouter([
+const appRouter = createRoutes([
   {
     path: "/", element: <AppLayout />, 
     children: [
